@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    background-image: url("./Image/WallpaperDog-5543700.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+header {
+    background-color: #343a40;
+    height: 80px;
+  }
+header nav {
+    
+    margin: 0 auto;
+    color: whitesmoke;
+}
+  
+header nav .navbar-brand {
+    
+    color: whitesmoke !important;
+    cursor: pointer;
+  }
+  
+footer {
+    
+    background-color: #343a40;
+    color: whitesmoke;
+    height: 80px;
+
+}
+  
+footer .footerItem {
+    
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  
+#show-list {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+  
+.show-item {
+    
+    width: 22rem;
+    
+  }
+
+.show-item:hover {
+
+    width: 23rem;
+    box-shadow: 5px 10px 12px rgb(143, 143, 187);
+}
+  
+.show-item p {
+    
+    font-size: 1.5em;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    color: #9fafc0;
+    text-align: center;
+  }
+  
+.show-item img {
+    
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+
+}
+  
+#search-dropdown {
+    
+    position: absolute;
+    background: inherit;
+    border-radius: 8px;
+    color: #aab6c2;
+    cursor: pointer;
+    width: 205px;
+
+}
+  
+.search-item {
+    
+    padding: 4px 0;
+    border-bottom: 1px solid black;
+    margin: 15px;
+
+}
+  
+.detail-wrapper {
+    
+    width: 60%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    text-align: left;
+  
+}
+  
+.list-wrapper {
+    
+    padding-left: 5rem;
+}
+  
+.show {
+    
+    text-align: left;
+  
+}
+  
+.season-item {
+    
+    display: list-item;
+  
+}
+  
+.cast-item {
+    
+    display: list-item;
+}
+
+
+
+
+  
+p {
+    text-align: start;
+  }
