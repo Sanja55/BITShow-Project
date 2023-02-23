@@ -57,17 +57,17 @@ const uiModule = (function () {
     };
     
   
-  
-  
-  
     const renderSearchDropdown = (shows) => {
-      shows.forEach((show) => {
-        const itemEl = document.createElement('div');
-        itemEl.setAttribute('id', show.id);
-        itemEl.classList.add('search-item');
-        itemEl.textContent = show.name;
-        searchDropdownEl.appendChild(itemEl);
+      
+        shows.forEach((show) => {
+            
+            const itemEl = document.createElement('div');
+            itemEl.setAttribute('id', show.id);
+            itemEl.classList.add('search-item');
+            itemEl.textContent = show.name;
+            searchDropdownEl.appendChild(itemEl);
       });
+    
     };
   
     const clearDropdown = () => {

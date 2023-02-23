@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    background-image: url("./Image/WallpaperDog-5543700.jpg");
+    background-image: url("./Image/dark-background-abstract-background-network-3d-background-1920x1080-8324.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -11,6 +11,18 @@ header {
     background-color: #343a40;
     height: 80px;
   }
+
+
+header:hover {
+
+    box-shadow:  5px 10px 12px rgb(143, 143, 187);
+
+}
+
+footer:hover {
+
+    box-shadow:  5px -10px 12px rgb(143, 143, 187);
+}
 header nav {
     
     margin: 0 auto;
@@ -94,24 +106,29 @@ footer .footerItem {
 .search-item {
     
     padding: 4px 0;
-    border-bottom: 1px solid black;
     margin: 15px;
 
 }
   
 .detail-wrapper {
     
-    width: 60%;
+    width: 80%;
     display: flex;
     align-items: start;
     justify-content: space-between;
     text-align: left;
   
 }
+
+.detail-wrapper img {
+
+    max-width: 70%;
+}
   
 .list-wrapper {
     
-    padding-left: 5rem;
+    padding-left: 2rem;
+    list-style: none;
 }
   
 .show {

@@ -30,7 +30,7 @@ const dataModule = (function () {
             .filter(show => show.rating.average)
             .sort((a, b) => b.rating.average - a.rating.average)
             .slice(0, 50);
-            return topFiftyShows.map(({ name, id, image }) => new TvShow(name, id, image.medium));
+            return topFiftyShows.map(({ name, id, image }) => new TvShow(name, id, image.original));
           });
         };
   
@@ -76,5 +76,11 @@ const dataModule = (function () {
         });
     };
   
-    return { getShows, searchShow, getSingleTvShow };
+    return { 
+        
+        getShows, 
+        searchShow, 
+        getSingleTvShow 
+    
+    };
   })();
