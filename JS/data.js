@@ -1,10 +1,6 @@
 const dataModule = (function () {
-    class Season {
-      constructor(startDate, endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-      }
-    }
+    
+    
     class TvShow {
       constructor(name, id, coverUrl, summary = '', cast = [], seasons = []) {
         this.id = id;
@@ -15,18 +11,28 @@ const dataModule = (function () {
         this.seasons = seasons;
       }
     }
+
+    class Season {
+        constructor(startDate, endDate) {
+          this.startDate = startDate;
+          this.endDate = endDate;
+        }
+      }
   
     const getShows = () => {
-      return fetch('http://api.tvmaze.com/shows')
+      
+        return fetch('http://api.tvmaze.com/shows')
         .then(function (res) {
           return res.json();
         })
-        .then(function (showsRawObjects) {
-          return showsRawObjects.map(
-            ({ name, id, image }) => new TvShow(name, id, image.original)
-          );
-        });
-    };
+        .then((showsRawObjects) => {
+            const topFiftyShows = showsRawObjects
+            .filter(show => show.rating.average)
+            .sort((a, b) => b.rating.average - a.rating.average)
+            .slice(0, 50);
+            return topFiftyShows.map(({ name, id, image }) => new TvShow(name, id, image.medium));
+          });
+        };
   
     const getSingleTvShow = (id) => {
       return fetch(
@@ -36,10 +42,13 @@ const dataModule = (function () {
           return res.json();
         })
         .then(function (rawTvShow) {
-          const tvSeasons = rawTvShow._embedded.seasons.map(
+          
+            const tvSeasons = rawTvShow._embedded.seasons.map(
             (s) => new Season(s.premiereDate, s.endDate)
-          );
-          const cast = rawTvShow._embedded.cast.map((a) => a.person.name);
+            );
+          
+            const cast = rawTvShow._embedded.cast.map((a) => a.person.name);
+          
           return new TvShow(
             rawTvShow.name,
             rawTvShow.id,
@@ -52,12 +61,14 @@ const dataModule = (function () {
     };
   
     const searchShow = (term) => {
-      return fetch(`https://api.tvmaze.com/search/shows?q=${term}`)
+      
+        return fetch(`https://api.tvmaze.com/search/shows?q=${term}`)
         .then(function (res) {
           return res.json();
         })
         .then(function (showsRawObjects) {
-          return showsRawObjects.map(({ show }) => {
+          
+            return showsRawObjects.map(({ show }) => {
             const { name, id, image } = show;
             const imageToUse = image ? image.original : '';
             return new TvShow(name, id, imageToUse);
