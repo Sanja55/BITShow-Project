@@ -48,7 +48,7 @@ const uiModule = (function () {
       ${castListHtml}
       </div>
       </div>
-      <h2 class="show">Show Details</h2>
+      <h2 class="show m-4">Show Details</h2>
       ${show.summary}
       `;
       

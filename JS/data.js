@@ -26,6 +26,7 @@ const dataModule = (function () {
           return res.json();
         })
         .then((showsRawObjects) => {
+            
             const topFiftyShows = showsRawObjects
             .filter(show => show.rating.average)
             .sort((a, b) => b.rating.average - a.rating.average)
@@ -35,7 +36,8 @@ const dataModule = (function () {
         };
   
     const getSingleTvShow = (id) => {
-      return fetch(
+      
+        return fetch(
         `http://api.tvmaze.com/shows/${id}?embed[]=seasons&embed[]=cast`
       )
         .then(function (res) {
@@ -50,11 +52,12 @@ const dataModule = (function () {
             const cast = rawTvShow._embedded.cast.map((a) => a.person.name);
           
           return new TvShow(
+            
             rawTvShow.name,
             rawTvShow.id,
             rawTvShow.image.original,
             rawTvShow.summary,
-            cast,
+            cast.slice(0, 7),
             tvSeasons
           );
         });

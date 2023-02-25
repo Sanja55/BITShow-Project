@@ -19,10 +19,7 @@ header:hover {
 
 }
 
-footer:hover {
 
-    box-shadow:  5px -10px 12px rgb(143, 143, 187);
-}
 header nav {
     
     margin: 0 auto;
@@ -35,32 +32,28 @@ header nav .navbar-brand {
     cursor: pointer;
   }
   
-footer {
-    
-    background-color: #343a40;
-    color: whitesmoke;
-    height: 80px;
+::placeholder {
+
+    color: azure;
+    font-size: 1.2em;
+    font-weight: 500;
 
 }
-  
-footer .footerItem {
-    
-    color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
+
+#main-content {
+
+    width: 80%;
+}
+
+
   
 #show-list {
     
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 24px;
+    row-gap: 50px;
   }
   
 .show-item {
@@ -71,8 +64,8 @@ footer .footerItem {
 
 .show-item:hover {
 
-    width: 23rem;
-    box-shadow: 5px 10px 12px rgb(143, 143, 187);
+    width: 25rem;
+    box-shadow: 5px 10px 12px 10px rgb(143, 143, 187);
 }
   
 .show-item p {
@@ -129,6 +122,7 @@ footer .footerItem {
     
     padding-left: 2rem;
     list-style: none;
+    font-size: 1.3em;
 }
   
 .show {
@@ -137,21 +131,20 @@ footer .footerItem {
   
 }
   
-.season-item {
+.season-item, .cast-item {
     
     display: list-item;
   
 }
-  
-.cast-item {
-    
-    display: list-item;
-}
-
-
-
 
   
 p {
     text-align: start;
+    font-size: 1.3em;
   }
+
+  footer:hover {
+
+    box-shadow:  5px -10px 12px rgb(143, 143, 187);
+}
+  
